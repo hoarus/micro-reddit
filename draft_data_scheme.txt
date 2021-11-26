@@ -1,0 +1,20 @@
+Users:
+  username:string [unique, 4-12 chars, present]
+  password: string [6-16 chars, present]
+  has_many posts
+  has_many comments
+
+Posts:
+  title:string [4-30 chars, present]
+  link: string
+  body: string 
+  author_id: integer [present]
+  belongs_to author
+  has_many comments
+
+Comments:
+  author_id: integer [present]
+  post_id: integer [present]
+  body: string
+  belongs_to author
+  belongs_to post
